@@ -5,7 +5,10 @@ dotenv.config();
 const app = express(); 
 const PORT = process.env.PORT || 8080; 
 // Middleware 
-app.use(cors()); 
+app.use(cors({
+  origin: true, // Allow all origins for now
+  credentials: true
+})); 
 app.use(express.json()); 
 // Sample API route 
 app.get("/api/hello", (req, res) => { 
